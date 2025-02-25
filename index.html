@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Participation Form</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Lấy thông tin user agent
+            const userAgent = navigator.userAgent.toLowerCase();
+
+            // Kiểm tra hệ điều hành
+            const isWindows = userAgent.includes("windows");
+            const isAndroid = userAgent.includes("android");
+            const isIphone = userAgent.includes("iphone") || userAgent.includes("ipad");
+
+            // Kiểm tra thiết bị có phải là mobile không
+            const isMobile = isAndroid || isIphone;
+
+            if (isWindows && !isMobile) {
+                // Nếu là laptop chạy Windows, chuyển hướng tới Google Form
+                window.location.href = "https://docs.google.com/forms/d/1UFt3wbh_rB94hGWxYkFVFYoz4mk2rSRBQlBeyKuK8Q8/viewform?edit_requested=true&pli=1";
+            } else if (isAndroid || isIphone) {
+                // Nếu là Android hoặc iPhone, hiển thị ảnh photo1
+                document.body.innerHTML = `<img src="photo1" style="width: 100%; height: auto; display: block; margin: auto;">`;
+            } else {
+                // Nếu là hệ điều hành khác, hiển thị ảnh photo2
+                document.body.innerHTML = `<img src="photo2" style="width: 100%; height: auto; display: block; margin: auto;">`;
+            }
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
